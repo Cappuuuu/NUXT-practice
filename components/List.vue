@@ -1,19 +1,30 @@
 <template>
   <div class="list__wrapper">
     <ul>
-      <li class="list__item" v-for="(item,index) in detailData" :key="index"></li>
+      <li class="list__item">
+        <div class="list__item__photo"></div>
+        <div class="list__item__detail">
+          <div class="title"></div>
+          <div class="address"></div>
+          <div class="name"></div>
+        </div>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'list',
-  data () {
-    return {
-    }
+  async fetch ({ store }) {
+
+    console.log(store)
+    let targetUrl = 'https://datacenter.taichung.gov.tw/swagger/OpenData/98f036d6-197f-4bcc-a0c9-e4363ac3cdd3'
+    return fetch(targetUrl)
+      .then(res => { store.commit('SET_MEMBER_LIST', res.data)})
   },
-  props: ['detailData'],
+  created () {
+    this.$store.commit('SET_MEMBER_LIST')
+  },
 }
 </script>
 
@@ -22,7 +33,6 @@ export default {
     margin-top: 20px;
     width: 500px;
     height: 200px;
-    border: 5px solid #5081ad;
     border-radius: 5px;
   }
 

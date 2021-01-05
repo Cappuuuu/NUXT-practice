@@ -1,27 +1,11 @@
 <template>
   <div class="container">
-    <List :detailData="detailData"/>
+    <List />
   </div>
 </template>
 
 <script>
 export default {
-  asyncData({ $axios }) {
-    const targetUrl = 'https://datacenter.taichung.gov.tw/swagger/OpenData/98f036d6-197f-4bcc-a0c9-e4363ac3cdd3'
-    return $axios.get(targetUrl)
-      .then((res) => {
-        return {
-          detailData: res.data,
-        }
-      }).catch((err) => {
-        console.log(err.message)
-      })
-  },
-  data () {
-    return {
-      detailData: [],
-    }
-  },
 }
 </script>
 
