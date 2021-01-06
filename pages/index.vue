@@ -6,6 +6,11 @@
 
 <script>
 export default {
+  async fetch ({ store }) {
+    await store.dispatch('getMemberList')
+    // let targetUrl = 'https://datacenter.taichung.gov.tw/swagger/OpenData/98f036d6-197f-4bcc-a0c9-e4363ac3cdd3'
+    // return axios.get(targetUrl).then(res => { store.commit('SET_MEMBER_LIST', [1,2,3])})
+  },
 }
 </script>
 
