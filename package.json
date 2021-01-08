@@ -12,8 +12,10 @@
     "lint": "yarn lint:js && yarn lint:style"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/axios": "^5.12.5",
     "core-js": "^3.6.5",
+    "fibers": "^5.0.0",
+    "node-sass": "^5.0.0",
     "nuxt": "^2.14.6",
     "sass-loader": "^10.1.0"
   },

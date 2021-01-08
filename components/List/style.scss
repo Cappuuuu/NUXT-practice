@@ -1,0 +1,86 @@
+.list__wrapper {
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.list__item {
+  position: relative;
+  display: flex;
+  list-style: none;
+  margin-bottom: 30px;
+  background-color: #fff;
+  transition: box-shadow .2s ease-in;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 4px 10px 10px 0 rgba(0, 0, 0, .05);
+  }
+}
+
+.list__item__detail {
+  position: relative;
+  padding: 30px;
+  min-width: 250px;
+  text-align: left;
+
+  .title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 40px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 3px;
+      height: 25px;
+      background-color: red;
+      transition: box-shadow .2s ease-in;
+
+      .list__item:hover & {
+        box-shadow: 2px 0 10px rgb(242, 146, 146);
+      }
+    }
+  }
+
+  .phone,
+  .name {
+    color: #8f8f8f;
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: rgb(223, 56, 56);
+  }
+}
+
+.view__more {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none;
+  color: #999;
+  padding: 5px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0 ;
+    left: 0;
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: rgb(197, 197, 197);
+    transition: width .4s ease-in;
+
+    .list__item:hover & {
+      width: 100%;
+    }
+  }
+}
